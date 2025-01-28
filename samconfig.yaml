@@ -1,0 +1,12 @@
+version: 0.1
+default:
+  build:
+    parameters:
+      cached: 'true'
+      parallel: 'true'
+  deploy:
+    parameters:
+      stack_name: whats-up
+      s3_bucket: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-zavpnflsqd1t
+      capabilities: CAPABILITY_IAM
+      image_repositories: []
