@@ -28,6 +28,7 @@ jobs:
           replace-in-files --string={{StackName}} --replacement= ${{ inputs.STACK_NAME }} ./samconfig.toml
       - run: |
           npm install -g esbuild
+          npm ci
           sam build
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v1-node16
