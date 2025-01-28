@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: the-stack
+Description: my-great-app
 Transform:
   - AWS::Serverless-2016-10-31
 
@@ -13,8 +13,8 @@ Globals:
       Variables:
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
         AWS_ACCOUNT_ID: !Sub ${AWS::AccountId}
-        POWERTOOLS_SERVICE_NAME: the-stack-api
-        POWERTOOLS_METRICS_NAMESPACE: the-stack
+        POWERTOOLS_SERVICE_NAME: my-great-app-api
+        POWERTOOLS_METRICS_NAMESPACE: my-great-app
 
 Parameters:
   CognitoUserPoolId:

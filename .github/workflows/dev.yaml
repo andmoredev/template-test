@@ -27,10 +27,10 @@ jobs:
     with:
       ENVIRONMENT: dev
       AWS_REGION: us-east-1
-      PIPELINE_EXECUTION_ROLE: dev
-      CLOUDFORMATION_EXECUTION_ROLE: dev
-      ARTIFACTS_BUCKET_NAME: dev
-      STACK_NAME: the-stack
+      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
+      CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-2wGr0NBpJggH
+      ARTIFACTS_BUCKET_NAME: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-zavpnflsqd1t
+      STACK_NAME: my-great-app
     secrets: inherit
 
   test-api:
@@ -40,6 +40,6 @@ jobs:
     with:
       ENVIRONMENT: dev
       AWS_REGION: us-east-1
-      PIPELINE_EXECUTION_ROLE: dev
-      STACK_NAME: the-stack
+      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
+      STACK_NAME: my-great-app
     secrets: inherit

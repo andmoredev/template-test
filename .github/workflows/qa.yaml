@@ -26,11 +26,11 @@ jobs:
     uses: ./.github/workflows/shared-deploy.yaml
     with:
       ENVIRONMENT: qa
-      AWS_REGION: us-east-2
-      PIPELINE_EXECUTION_ROLE: d
-      CLOUDFORMATION_EXECUTION_ROLE: e
-      ARTIFACTS_BUCKET_NAME: f
-      STACK_NAME: my-branc-new-stack
+      AWS_REGION: us-east-1
+      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
+      CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-2wGr0NBpJggH
+      ARTIFACTS_BUCKET_NAME: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-zavpnflsqd1t
+      STACK_NAME: my-great-app
     secrets: inherit
 
   test-api:
@@ -38,8 +38,8 @@ jobs:
     needs: [deploy-resources]
     uses: ./.github/workflows/shared-test-api.yaml
     with:
-      ENVIRONMENT : qa
-      AWS_REGION: us-east-2
-      PIPELINE_EXECUTION_ROLE: d
-      STACK_NAME: my-branc-new-stack
+      ENVIRONMENT: qa
+      AWS_REGION: us-east-1
+      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
+      STACK_NAME: my-great-app
     secrets: inherit

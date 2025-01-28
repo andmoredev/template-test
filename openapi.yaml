@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: the-stack
-  description: the-stack
+  title: my-great-app
+  description: my-great-app
   contact:
     name: Andres Moreno
 
