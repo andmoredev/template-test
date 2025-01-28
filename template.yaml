@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: my-great-app
+Description: whats-up
 Transform:
   - AWS::Serverless-2016-10-31
 
@@ -13,8 +13,8 @@ Globals:
       Variables:
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
         AWS_ACCOUNT_ID: !Sub ${AWS::AccountId}
-        POWERTOOLS_SERVICE_NAME: my-great-app-api
-        POWERTOOLS_METRICS_NAMESPACE: my-great-app
+        POWERTOOLS_SERVICE_NAME: whats-up-api
+        POWERTOOLS_METRICS_NAMESPACE: whats-up
 
 Parameters:
   CognitoUserPoolId:

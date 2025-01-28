@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: my-great-app
-  description: my-great-app
+  title: whats-up
+  description: whats-up
   contact:
     name: Andres Moreno
 

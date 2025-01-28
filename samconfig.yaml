@@ -6,7 +6,7 @@ default:
       parallel: 'true'
   deploy:
     parameters:
-      stack_name: my-great-app
+      stack_name: whats-up
       s3_bucket: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-zavpnflsqd1t
       capabilities: CAPABILITY_IAM
       image_repositories: []

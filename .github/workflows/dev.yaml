@@ -9,6 +9,10 @@ on:
 concurrency:
   group: ${{ github.workflow }}
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   lint:
     name: Lint
@@ -26,11 +30,7 @@ jobs:
     uses: ./.github/workflows/shared-deploy.yaml
     with:
       ENVIRONMENT: dev
-      AWS_REGION: us-east-1
-      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
-      CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-2wGr0NBpJggH
-      ARTIFACTS_BUCKET_NAME: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-zavpnflsqd1t
-      STACK_NAME: my-great-app
+      STACK_NAME: whats-up
     secrets: inherit
 
   test-api:
@@ -39,7 +39,5 @@ jobs:
     uses: ./.github/workflows/shared-test-api.yaml
     with:
       ENVIRONMENT: dev
-      AWS_REGION: us-east-1
-      PIPELINE_EXECUTION_ROLE: arn:aws:iam::965116670064:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-bh15tJwqwU3Y
-      STACK_NAME: my-great-app
+      STACK_NAME: whats-up
     secrets: inherit
