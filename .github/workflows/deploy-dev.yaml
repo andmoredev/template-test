@@ -44,6 +44,6 @@ jobs:
     needs: [deploy-resources]
     uses: ./.github/workflows/shared-test-api.yaml
     with:
-      ENVIRONMENT: ${{ inputs.ENVIRONMENT == '' && inputs.ENVIRONMENT || 'dev' }}
+      ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
       STACK_NAME: what-up
     secrets: inherit
