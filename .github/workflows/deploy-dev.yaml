@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       ENVIRONMENT:
-        description: 'Environment to run tests against'
+        description: 'Logical Environment'
         type: environment
         required: true
 
