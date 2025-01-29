@@ -14,7 +14,7 @@ jobs:
   cleanup-resources:
     name: Delete SAM Application
     runs-on: ubuntu-latest
-    environment: dev
+    environment: sandbox
     steps:
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v1-node16
@@ -27,6 +27,6 @@ jobs:
       - name: Delete Stack
         run: |
           sam delete \
-          --stack-name what-up-${{ github.ref_name }}
+          --stack-name testing-workflows-${{ github.ref_name }}
           --region us-east-1 \
           --no-prompts

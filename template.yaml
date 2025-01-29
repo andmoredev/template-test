@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: what-up
+Description: testing-workflows
 Transform:
   - AWS::Serverless-2016-10-31
 
@@ -13,8 +13,8 @@ Globals:
       Variables:
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
         AWS_ACCOUNT_ID: !Sub ${AWS::AccountId}
-        POWERTOOLS_SERVICE_NAME: what-up-api
-        POWERTOOLS_METRICS_NAMESPACE: what-up
+        POWERTOOLS_SERVICE_NAME: testing-workflows-api
+        POWERTOOLS_METRICS_NAMESPACE: testing-workflows
 
 Parameters:
   CognitoUserPoolId:

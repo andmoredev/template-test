@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: what-up
-  description: what-up
+  title: testing-workflows
+  description: testing-workflows
   contact:
     name: Andres Moreno
 

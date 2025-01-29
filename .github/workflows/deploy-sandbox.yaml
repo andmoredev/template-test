@@ -1,7 +1,7 @@
-name: prod
+name: sandbox
 
 on:
-  push:
+  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -29,8 +29,8 @@ jobs:
     needs: [lint, unit-tests]
     uses: ./.github/workflows/shared-deploy.yaml
     with:
-      ENVIRONMENT: prod
-      STACK_NAME: what-up
+      ENVIRONMENT: sandbox
+      STACK_NAME: testing-workflows-${{ github.ref_name }}
     secrets: inherit
 
   test-api:
@@ -38,6 +38,6 @@ jobs:
     needs: [deploy-resources]
     uses: ./.github/workflows/shared-test-api.yaml
     with:
-      ENVIRONMENT: prod
-      STACK_NAME: what-up
+      ENVIRONMENT: sandbox
+      STACK_NAME: testing-workflows-${{ github.ref_name }}
     secrets: inherit

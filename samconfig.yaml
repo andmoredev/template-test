@@ -6,6 +6,6 @@ default:
       parallel: 'true'
   deploy:
     parameters:
-      stack_name: what-up
+      stack_name: testing-workflows
       capabilities: CAPABILITY_IAM
       image_repositories: []

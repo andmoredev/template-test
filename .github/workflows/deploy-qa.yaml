@@ -1,4 +1,4 @@
-name: test
+name: qa
 
 on:
   pull_request:
@@ -29,8 +29,8 @@ jobs:
     needs: [lint, unit-tests]
     uses: ./.github/workflows/shared-deploy.yaml
     with:
-      ENVIRONMENT: test
-      STACK_NAME: what-up
+      ENVIRONMENT: qa
+      STACK_NAME: testing-workflows
     secrets: inherit
 
   test-api:
@@ -38,6 +38,6 @@ jobs:
     needs: [deploy-resources]
     uses: ./.github/workflows/shared-test-api.yaml
     with:
-      ENVIRONMENT: test
-      STACK_NAME: what-up
+      ENVIRONMENT: qa
+      STACK_NAME: testing-workflows
     secrets: inherit
