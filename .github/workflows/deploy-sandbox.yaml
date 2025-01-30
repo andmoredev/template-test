@@ -30,7 +30,7 @@ jobs:
     uses: ./.github/workflows/shared-deploy.yaml
     with:
       ENVIRONMENT: dev
-      STACK_NAME: testing-workflows-$${{ github.event.pull_request.head.ref || github.ref_name }}
+      STACK_NAME: testing-workflows-${{ github.event.pull_request.head.ref || github.ref_name }}
     secrets: inherit
 
   test-api:
