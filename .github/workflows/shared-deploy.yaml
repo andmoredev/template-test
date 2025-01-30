@@ -21,11 +21,6 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - uses: actions/checkout@v3
-      - name: Replace Variables in samconfig
-        run: |
-          npm i -g replace-in-files-cli
-          replace-in-files --string={{Environment}} --replacement=${{ inputs.ENVIRONMENT }} ./samconfig.ci.yaml
-          replace-in-files --string={{StackName}} --replacement= ${{ inputs.STACK_NAME }} ./samconfig.ci.yaml
       - run: |
           npm install -g esbuild
           npm ci
@@ -41,6 +36,7 @@ jobs:
       - name: Deploy
         run: |
           sam deploy \
+          --stack-name ${{inputs.STACK_NAME }} \
           --s3-bucket ${{ secrets.ARTIFACTS_BUCKET_NAME }} \
           --no-fail-on-empty-changeset \
           --role-arn ${{ secrets.CLOUDFORMATION_EXECUTION_ROLE }}
