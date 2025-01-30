@@ -29,7 +29,7 @@ jobs:
     needs: [lint, unit-tests]
     uses: ./.github/workflows/shared-deploy.yaml
     with:
-      ENVIRONMENT: production
+      ENVIRONMENT: prod
       STACK_NAME: testing-workflows
     secrets: inherit
 
@@ -38,6 +38,6 @@ jobs:
     needs: [deploy-resources]
     uses: ./.github/workflows/shared-test-api.yaml
     with:
-      ENVIRONMENT: production
+      ENVIRONMENT: prod
       STACK_NAME: testing-workflows
     secrets: inherit
